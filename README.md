@@ -18,4 +18,4 @@ This command will launch the API server at port 5000:
 
     $ docker run -d -p 5000:5000 --name jaeles-server mablanco/jaeles server --host 0.0.0.0
 
-There are more usage examples at https://github.com/jaeles-project/jaeles#usage
+There are more usage examples at <https://github.com/jaeles-project/jaeles#usage>
