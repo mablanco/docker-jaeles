@@ -4,7 +4,7 @@ Docker image for Jaeles, a powerful, flexible and easily extensible framework wr
 
 ## How to use this image
 
-I recommend to run the Docker container with the `--rm` parameter, which will remove the container after finishing its execution, only if using Jaeles as a CLI tool that doesn't need to persist anything after running. In case you want to run Jaeles' API server, remove the `--rm` parameter and optionally add a Docker volume if you want persistance.
+I recommend running the Docker container with the `--rm` parameter, which will remove the container after finishing its execution, only if using Jaeles as a CLI tool that doesn't need to persist anything after running. In case you want to run Jaeles' API server, remove the `--rm` parameter and optionally add a Docker volume if you want persistance.
 
 This command will run Jaeles with no parameters, thus showing its inline help:
 
