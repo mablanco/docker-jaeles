@@ -6,6 +6,6 @@ RUN go get -v -ldflags "-linkmode external -extldflags -static" -u github.com/ja
 
 FROM alpine:3.12.1
 WORKDIR /
-COPY --from=builder /go/bin/jaeles .
+COPY --from=builder /go/bin/jaeles /bin/jaeles
 EXPOSE 5000
-ENTRYPOINT ["/jaeles"]
+ENTRYPOINT ["/bin/jaeles"]
