@@ -7,5 +7,7 @@ RUN go get -v -ldflags "-linkmode external -extldflags -static" -u github.com/ja
 FROM alpine:3.12.1
 WORKDIR /
 COPY --from=builder /go/bin/jaeles /bin/jaeles
+RUN adduser -D -g '' jaeles
+USER jaeles
 EXPOSE 5000
 ENTRYPOINT ["/bin/jaeles"]
