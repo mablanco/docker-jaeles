@@ -6,7 +6,8 @@ RUN go get -v -ldflags "-linkmode external -extldflags -static" -u github.com/ja
 
 FROM alpine:3.15.0
 COPY --from=builder /go/bin/jaeles /bin/jaeles
-RUN adduser -D -g '' jaeles
+RUN apk upgrade --no-cache && \
+    adduser -D -g '' jaeles
 USER jaeles
 WORKDIR /home/jaeles
 RUN mkdir .jaeles && chown jaeles .jaeles
