@@ -22,12 +22,18 @@ This command will scan a website:
 
     $ docker run -t --rm -v jaeles_config:/home/jaeles/.jaeles mablanco/jaeles scan -u http://example.com
 
-This command will launch the API server at port 5000, giving the container a name and removing the `--rm` parameter:
-
-    $ docker run -d -p 5000:5000 --name jaeles-server -v jaeles_config:/home/jaeles/.jaeles mablanco/jaeles server --host 0.0.0.0
-
 You can have a look at Jaeles' inline help like this:
 
     $ docker run --rm mablanco/jaeles
 
-There are more usage examples at <https://github.com/jaeles-project/jaeles#usage>
+There are more usage examples at https://github.com/jaeles-project/jaeles#usage
+
+## Web UI
+
+You can start the Web UI, as a daemonized process, with the following command (note that we are giving the container a name and removing the `--rm` parameter):
+
+    $ docker run -d -p 5000:5000 --name jaeles-server -v jaeles_config:/home/jaeles/.jaeles mablanco/jaeles server --host 0.0.0.0
+
+Now the Web UI is accesible at https://127.0.0.1:5000/. The password to access the Web UI can be obtained executing this command:
+
+    $ docker exec -it osmedeus-server grep password /home/jaeles/.jaeles/config.yaml
