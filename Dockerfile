@@ -1,4 +1,4 @@
-FROM golang:1.20.14-alpine3.19 AS builder
+FROM golang:1.20.14-alpine3.18 AS builder
 RUN apk add git gcc libc-dev
 RUN go install github.com/jaeles-project/jaeles@latest
 
