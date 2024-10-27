@@ -1,10 +1,8 @@
-FROM golang:1.17.6-alpine3.15 as builder
-ENV GO111MODULE=on \
-    GOOS=linux
+FROM golang:1.20.14-alpine3.19 AS builder
 RUN apk add git gcc libc-dev
-RUN go get -v -ldflags "-linkmode external -extldflags -static" -u github.com/jaeles-project/jaeles
+RUN go install github.com/jaeles-project/jaeles@latest
 
-FROM alpine:3.15.0
+FROM alpine:3.20.3
 COPY --from=builder /go/bin/jaeles /bin/jaeles
 RUN apk upgrade --no-cache && \
     adduser -D -g '' jaeles && \
