@@ -1,5 +1,7 @@
 # docker-jaeles
 
+> **DEPRECATED:** this image is no longer maintained and will not receive updates. Upstream Jaeles is no longer maintained either: its author archived the project and recommends [Vigolium](https://github.com/vigolium/vigolium) instead.
+
 Docker image for Jaeles, a powerful, flexible and easily extensible framework written in Go for building your own Web Application Scanner (<https://jaeles-project.github.io/>). This is a multistage Docker image that first compiles the Golang source code and then builds an image from scratch that hosts the resulting executable.
 
 ## How to use this image
